@@ -1,0 +1,555 @@
+@import "./common/_base.scss";
+@import "./common/_mixin.scss";
+@import "./public/_slider-banner.scss";
+@import "./public/_public-steps.scss";
+
+
+// 公共样式
+$border-color: #E5E5E5;
+$active-color: #3CA7FC;
+.public-index {
+    padding: 60px 0;
+}
+
+.home-main {
+    width: 100%;
+    overflow: hidden;
+}
+// 数字 start
+.main-number {
+    .num-group {
+        @include float-box(120px);
+        .num-item {
+            width: 20%;
+            line-height: 1.3;
+            text-align: center;
+            padding-top: 25px;
+            border-right: 1px solid $border-color;
+            &:first-child {
+                border-left: 1px solid $border-color;
+            }
+            .num-box {
+                font-family: "pmzdbt";
+                color: #146bae;
+                font-weight: bold;
+                height: 40px;
+                overflow: hidden;
+                &>* {
+                    display: inline-block;
+                }
+                .number {
+                    // vertical-align: bottom;
+                    line-height: 40px;
+                    font-size: 42px;
+                }
+                .small p {
+                    font-weight: normal;
+                    font-size: 18px;
+                    height: 20px;
+                    text-align: left;
+                }
+                .mt-number-animate-dom {
+                    display: inline-block;
+                    vertical-align: top;
+                }
+            
+                .mt-number-animate-span {
+                    display: block;
+                }
+                .time-box {
+                    font-weight: normal;
+                }
+                .p-time {
+                    vertical-align: bottom;
+                    overflow: hidden;
+                    display: inline-block;
+                }
+            }
+            .item-p {
+                font-size: 14px;
+                color: #666;
+                margin-top: 10px;
+            }
+        }
+    }
+}
+// 数字 end
+
+// 网站类型 start
+.main-webtype {
+    .type-group {
+        @include float-wrap(480px,224px,20px);
+        @extend .public-index;
+        .type-item {
+            @extend .transition;
+            position: relative;
+            border: 1px solid #eee;
+            text-align: center;
+            &:hover {
+                border-color: #00a2ff;
+                box-shadow: 0 0 3px 2px rgba(0, 162, 255, 0.2);
+                .item-title,
+                .item-more a {
+                    color: #00a2ff;
+                }
+                img.img-cur {
+                    opacity: 1;
+                }
+            }
+            .img-box {
+                position: relative;
+                height: 66px;
+                margin: 30px auto;
+                img {
+                    @include position-center();
+                }
+                .img-cur {
+                    @extend .transition;
+                    opacity: 0;
+                }
+            }
+            .item-title {
+                @extend .transition;
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+            .item-p {
+                color: #999;
+                line-height: 24px;
+            }
+            .item-more {
+                @include position-center(level);
+                bottom: 20px;
+                a {
+                    font-size: 12px;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}
+// 网站类型 end
+// 移动领域 start
+.main-moble {
+    background: url(../images/index/items-mobile-bg.png) no-repeat center;
+    .moble-wrap {
+        overflow: hidden;
+        text-align: center;
+        height: 561px + 120px;
+        @extend .public-index;
+        .con-title {
+            color: #fff;
+            @extend .title-30px;
+        }
+        .con-list {
+            position: absolute;
+            bottom: 60px;
+            left: 0;
+            width: 100%;
+            height: 505px;
+            .con-item {
+                position: absolute;
+                width: 242px;
+                top: 0;
+                bottom: 0;
+                perspective: 600px;
+                &:nth-of-type(1),
+                &:nth-of-type(2) {
+                    .item-box {
+                        transform: rotateY(40deg) skew(0deg, 10.5deg) scale(0.8)
+                    }
+                }
+                &:nth-of-type(3),
+                &:nth-of-type(4) {
+                    .item-box {
+                        transform: rotateY(-40deg) skew(0deg, -10.5deg) scale(0.8)
+                    }
+                }
+                &:nth-of-type(1),
+                &:nth-of-type(2),
+                &:nth-of-type(3),
+                &:nth-of-type(4) {
+                    &:hover {
+                        .item-box {
+                            transform: rotateY(0) skew(0, 0) scale(1);
+                        }
+                    }
+                }
+
+                &:nth-of-type(1){
+                    left: 128px;
+                }
+                &:nth-of-type(2){
+                    left: 371px;
+                }
+                &:nth-of-type(3){
+                    right: 371px;
+                }
+                &:nth-of-type(4){
+                    right: 128px;
+                }
+                .item-box {
+                    @extend .transition;
+                    position: relative;
+                    z-index: 0;
+                    width: 100%;
+                    height: 100%;
+                    padding-top: 130px;
+                    background: url(../images/index/phone.png) no-repeat center/100%;
+                    &::before {
+                        content: "";
+                        @include position-center();
+                        z-index: -1;
+                        width: 202px;
+                        height: 360px;
+                        background-color: #F2F2F2;
+                        
+                    }
+                    .box-title {
+                        font-size: 26px;
+                        margin-bottom: 10px;
+                    }
+                    .img-box {
+                        width: 70px;
+                        margin: 0 auto;
+                        padding: 20px 0;
+                        img {
+                            width: 100%;
+                        }
+                    }
+                    .item-desc {
+                        font-size: 14px;
+                        line-height: 22px;
+                        margin-bottom: 10px;
+                    }
+                    .item-btn {
+                        a {
+                            @include base-btn(60%,36px,inherit,#fff,$active-color);
+                            display: inline-block;
+                            &:hover {
+                                background-color: #307FBF;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
+// 移动领域 end
+// 基本服务 start
+
+.main-server {
+    .server-wrap {
+        text-align: center;
+        @extend .public-index;
+        .server-title {
+            @extend .title-30px;
+            margin-bottom: 100px;
+        }
+        .server-list {
+            @include float-wrap(500px,350px,75px);
+            .server-item {
+                &:hover {
+                    // transform: translateY(-20px);
+                    // box-shadow: 0 0 10px 5px rgba(135, 135, 135, .2);
+                    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+                    transform: translate3d(0, -4px, 0);
+                    .item-title {
+                        background-color: $active-color;
+                        &::before {
+                            border-bottom-color: $active-color;
+                        }
+                        &::after {
+                            border-top-color: $active-color;
+                        }
+                    }
+                    .item-btn a {
+                        background-color: $active-color;
+                        color: #fff;
+                    }
+                }
+                @extend .transition;
+                position: relative;
+                .item-title {
+                    @extend .transition;
+                    position: relative;
+                    width: 130px;
+                    height: 75px;
+                    line-height: 1.3;
+                    color: #fff;
+                    font-size: 24px;
+                    margin: 0 auto 70px;
+                    background-color: #293949;
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: -40px;
+                        left: 0;
+                        width: 0;
+                        height: 0;
+                        border-left: 65px solid transparent;
+                        border-right: 65px solid transparent;
+                        border-bottom: 40px solid #293949;
+                        transition: all .3s ease;
+                    }
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        bottom: -40px;
+                        left: 0;
+                        width: 0;
+                        height: 0;
+                        border-left: 65px solid transparent;
+                        border-right: 65px solid transparent;
+                        border-top: 40px solid #293949;
+                        transition: all .3s ease;
+                    }
+                }
+                .item-p {
+                    font-size: 16px;
+                    line-height: 30px;
+                }
+                .item-btn {
+                    width: 264px;
+                    bottom: 40px;
+                    @include position-center(level);
+                    a {
+                        @include base-btn(100%,50px,16px,$active-color,#fff,1px solid $active-color);
+                        &:hover {
+                            background: #307FBF;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// 基本服务 end
+
+// 案列列表 start
+.case-title,
+.plan-title {
+    @extend .title-30px;
+    margin-bottom: 60px;
+}
+.main-caseList {
+    overflow: hidden;
+    height: 760px;
+    background: url(../images/index/items-index-case-bg.png) no-repeat center top;
+    .case-wrap {
+        color: #fff;
+        text-align: center;
+        @extend .public-index;
+        .case-list {
+            @include float-box();
+            .case-item {
+                position: relative;
+                overflow: hidden;
+                width: 277px;
+                height: 219px;
+                margin-right: 30px;
+                margin-bottom: 20px;
+                &:nth-child(4n+4) {
+                    margin-right: 0;
+                    float: right;
+                }
+                &:hover {
+                    .item-link{
+                        &::after {
+                            opacity: 1;
+                            visibility: visible;
+                        }
+                        .item-info {
+                            transform: translateY(0);
+                            opacity: 1;
+                        }
+                    }
+                    
+                }
+                .item-link {
+                    &::after {
+                        @extend .transition;
+                        content: "";
+                        position: absolute;
+                        width: 100%;
+                        height: 100%;
+                        left: 0;
+                        top: 0;
+                        background-color: rgba(0, 0, 0, .5);
+                        opacity: 0;
+                        visibility: hidden;
+                    }
+                    .item-info {
+                        @extend .transition;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                        height: 100%;
+                        z-index: 1;
+                        padding-top: 64px;
+                        transform: translateY(30%);
+                        opacity: 0;
+                        
+                        .item-title {
+                            color: #fff;
+                            font-size: 16px;
+                            padding: 0 20px;
+                            margin-bottom: 15px;
+                        }
+                        .item-btn {
+                            @include base-btn(90px,26px,13px,#fff,$active-color);
+                            margin: 15px auto 0;
+                            &:hover {
+                                background: #307FBF;
+                            }
+                        }
+                    }
+                }
+                
+            }
+        }
+        .case-btn {
+            margin-top: 20px;
+            a {
+                @include base-btn(300px,60px,24px,#333, #fff);
+                display: inline-block;
+                &:hover {
+                    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.24);
+                    transform: translateY(-4px);
+                }
+            }
+        }
+    }
+}
+// 案列列表 end
+// 解决方案 start
+.main-plan {
+    .plan-wrap {
+        text-align: center;
+        @extend .public-index;
+        .plan-list {
+            @include float-wrap(546px,276px,32px);
+            .plan-item {
+                position: relative;
+                box-shadow: 0 0 3px 2px rgba(135, 135, 135, 0.15);
+                &:hover {
+                    .item-title,
+                    .item-btn a {
+                        background: $active-color;
+                    }
+                }
+                .item-title {
+                    @include base-btn(100%,83px,18px,#fff, #293949);
+                    margin-bottom: 40px;
+                }
+                .item-p {
+                    width: 62%;
+                    margin: 0 auto;
+                    height: 40px;
+                    line-height: 40px;
+                    box-sizing: border-box;
+                    border-bottom: 2px dotted #E6E6E6;
+                }
+                .item-btn {
+                    @include position-center(level);
+                    bottom: 50px;
+                    a {
+                        @include base-btn(140px,40px,14px,#fff, #C5C5C5);
+                        &:hover {
+                            background: #307FBF;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+// 解决方案 end
+
+// 售后服务 start
+.main-afterSale {
+    height: 318px;
+    color: #fff;
+    background: url(../images/index/items-contact-bg.png) no-repeat center;
+    .sale-wrap {
+        .head-list {
+            @include float-box(98px);
+            border-bottom: 1px dashed #fff;
+            .sale-item {
+                width: 25%;
+                text-align: center;
+                .item-block {
+                    display: inline-block;
+                    line-height: 98px;
+                    &>*{
+                        float: left;
+                    }
+                    .item-img-box  {
+                        padding-top: 29px;
+                    }
+                    .item-text {
+                        font-size: 24px;
+                        margin-left: 10px;
+                    }
+                }
+            }
+        }
+        .sale-body {
+            height: 220px;
+            text-align: center;
+            padding-top: 61px;
+            .body-title {
+                font-size: 20px;
+                margin-bottom: 40px;
+            }
+            .body-form {
+                font-size: 0;
+                .form-group {
+                    display: inline-block;
+                    @include float-box(38px);
+                    line-height: 38px;
+                    font-size: 14px;
+                    .form-row {
+                        margin-right: 20px;
+                        &:last-child{
+                            margin: 0;
+                        }
+                        label {
+                            margin-right: 6px;
+                        }
+                        input {
+                            line-height: 38px;
+                            height: 38px;
+                            padding: 0 10px;
+                            color: #666;
+                        }
+                        .inp-mobile {
+                            width: 220px;
+                        }
+                        .inp-verify {
+                            width: 126px;
+                            margin-right: 4px;
+                        }
+                        .verify-img {
+                            height: 38px;
+                        }
+                        .form-btn {
+                            @include base-btn(116px,100%,14px,#666,#FFEA00);
+                        }
+                        input:focus,
+                        .form-btn:hover {
+                            box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.24);
+                            transform: translateY(-4px);
+                        }
+                    }
+                    
+                }
+            }
+            
+        }
+    }
+}
+// 售后服务 end

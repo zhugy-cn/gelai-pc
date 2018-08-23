@@ -1,0 +1,703 @@
+@import "./common/_base.scss";
+@import "./common/_mixin.scss";
+@import "./public/_public-list.scss";
+@import "./public/_public-more-service.scss";
+@import "./public/_public-footer-form.scss";
+
+
+
+// 公共样式
+.layer {
+    padding: 60px 0;
+}
+.public-title {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+// 经典型网站
+.public-banner {
+    height: 619px;
+    line-height: 1.3;
+    .banner-title {
+        font-weight: 700;
+        font-size: 48px;
+    }
+    .banner-desc {
+        font-size: 24px;
+        margin: 40px 0;
+    }
+    .banner-service {
+        margin-bottom: 100px;
+        span {
+            display: inline-block;
+            vertical-align: top;
+            margin: 0 8px;
+            padding-left: 44px;
+            height: 24px;
+            line-height: 24px;
+            background-repeat: no-repeat;
+            background-position: left center;
+            @each $val in pc, mobile, xcx, app, wx {
+                &.#{$val} {
+                  background-image: url(../images/siteType/classical/pinpai-#{$val}.png);
+                }
+            }
+        }
+    }
+    .banner-btn {
+        width: 175px;
+        margin: 80px auto 0;
+        font-size: 18px;
+        a {
+            display: block;
+            height: 46px;
+            line-height: 44px;
+            border: 1px solid #fff;
+        }
+    }
+}
+.items {
+    @include clearfix();
+    .items-l {
+        float: left;
+    }
+    .items-r {
+        float: right;
+    }
+    .items-title {
+        font-size: 36px;
+        line-height: 96px;
+    }
+    p {
+        font-size: 14px;
+        line-height: 24px;
+        color: #999;
+    }
+    &.items1, 
+    &.items3 {
+        padding: 47px 0;
+        .items-l {
+            width: 40%;
+            text-align: center;
+        }
+        .items-r {
+            padding: 36px 60px 0 0;
+        }
+    }
+    &.items2,
+    &.items4 {
+        padding: 48px 0 68px;
+        .items-l {
+            padding: 27px 0 0 100px;
+        }
+        .items-r {
+            width: 49%;
+            padding: 22px 0 0;
+            text-align: center;
+        }
+    }
+    &.items3 {
+        .items-l {
+            padding-top: 50px;
+        }
+        .items-r {
+            padding: 36px 0 0 0;
+        }
+    }
+}
+
+// 经典案例
+.case-wrap {
+    padding: 60px 0;
+    height: 665px;
+    background: url(../images/siteType/classical/items-case-bg.png) no-repeat center;
+    .case-title {
+        @extend .title-30px;
+        color: #fff;
+        margin-bottom: 50px;
+        &::before,
+        &::after {
+            content: "";
+            display: inline-block;
+            width: 140px;
+            vertical-align: middle;
+            border-bottom: 1px solid #fff;
+        }
+        &::before {
+            margin-right: 20px;
+        }
+        &::after {
+            
+            margin-left: 20px;
+        }
+    }
+}
+// 服务套餐
+.service-wrap {
+    padding: 60px 0;
+    .service-title {
+        position: relative;
+        width: 220px;
+        height: 40px;
+        line-height: 40px;
+        color: #fff;
+        font-size: 18px;
+        text-align: center;
+        margin: 0 auto;
+        padding-right: 22px;
+        background: #3CA7FC;
+        margin-bottom: 40px;
+        cursor: pointer;
+        &::before {
+            content: '';
+            @extend .transition;
+            @include position-center(vertical,auto);
+            transform: translateY(-50%) rotateZ(0deg);
+            right: 20px;
+            width: 14px;
+            height: 14px;
+            background: url(../images/siteType/classical/pinpai-m-icon1.png) no-repeat center;
+        }
+        &.cur::before {
+            transform: translateY(-50%) rotateZ(180deg);
+        }
+    }
+    .service-list {
+        display: none;
+        @include float-wrap(451px,264px,48px);
+        .service-item {
+            &:nth-child(2) .item-head {
+                background-color: #009FC7;
+            }
+            &:nth-child(3) .item-head {
+                background-color: #FF872E;
+            }
+            &:nth-child(4) .item-head {
+                background-color: #3C3C70;
+            }
+            .item-head {
+                color: #fff;
+                text-align: center;
+                padding: 14px 0;
+                background-color: #20B09F;
+                .head-name {
+                    font-size: 18px;
+                    font-weight: bold;
+                    margin-bottom: 10px;
+                }
+                .head-small {
+                    font-size: 12px;
+                    margin-top: 5px;
+                }
+            }
+            .item-dl {
+                position: relative;
+                height: 382px;
+                padding: 0 15px;
+                border: 1px solid #E5E5E5;
+                border-top: none;
+                background-color: #fff;
+                &>* {
+                    font-size: 14px;
+                    line-height: 16px;
+                }
+                .item-dt {
+                    color: #999;
+                    padding: 10px 0 5px;
+                    margin-bottom: 7px;
+                    border-bottom: 1px dashed #E5E5E5;
+                    text-align: center;
+                }
+                .item-dd {
+                    @include clearfix();
+                    font-size: 12px;
+                    color: #666;
+                    margin-bottom: 7px;
+                    span:first-child {
+                        float: left;
+                        max-width: 144px;
+                    }
+                    span:last-child {
+                        float: right;
+                        min-width: 40px;
+                        text-align: center;
+                        padding: 0 10px;
+                        background-color: #E5E5E5;
+                        border-radius: 5px;
+                        color: #999;
+                    }
+                }
+                .item-btn {
+                    position: absolute;
+                    left: 0;
+                    width: 100%;
+                    bottom: 30px;
+                    @include btn-wrap(36px,140px);
+                    a {
+                        color: #3CA7FC;
+                        border: 1px solid #3CA7FC;
+                    }
+                }
+            }
+        }
+    }
+}
+// 营销型网站
+.yingxiao-main {
+    .banner-desc {
+        margin-bottom: 18px;
+    }
+    .banner-small {
+        font-size: 20px;
+    }
+
+    // 基础功能
+    .jc-list {
+        padding-top: 15px;
+        @include float-wrap(259px,368px,48px);
+        .jc-item {
+            position: relative;
+            border: 1px solid #3CA7FC;
+            text-align: center;
+            padding-top: 47px;
+            cursor: pointer;
+            .item-icon {
+                width: 61px;
+                height: 53px;
+                margin: 0 auto 28px;
+                background: url(../images/siteType/yingxiao/marketing-icon1.png) no-repeat center;
+            }
+            .item-title {
+                font-size: 20px;
+                font-weight: bold;
+                margin-bottom: 16px;
+            }
+            .item-p {
+                font-size: 14px;
+                color: #999;
+                line-height: 1.3;
+            }
+            .jc-hover {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                color: #fff;
+                background: #3CA7FC;
+                // display: none;
+                opacity: 0;
+                transition: all .2s;
+                .hover-title {
+                    text-align: left;
+                    font-size: 16px;
+                    margin: 15px 0 10px 20px;
+                }
+                .hover-list {
+                    @include float-box();
+                    position: relative;
+                    padding: 0 30px;
+                    .hover-item {
+                        width: 50%;
+                        height: 90px;
+                        .hover-icon {
+                            height: 41px;
+                            margin-bottom: 5px;
+                            margin-top: 15px;
+                            background:  no-repeat center;
+                        }
+                        @for $i from 1 through 4 {
+                            &:nth-child(#{$i}) .hover-icon { 
+                                background-image: url(../images/siteType/yingxiao/marketing-icon#{$i+3}.png);
+                             }
+                        }
+                    }
+
+                }
+                &::before {
+                    content: "";
+                    @include position-center(level);
+                    width: 242px;
+                    border-bottom: 1px dashed rgba(255, 255, 255, .4);
+                    bottom: 110px;
+                }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    height: 156px;
+                    border-right: 1px dashed rgba(255, 255, 255, .4);
+                    left: 50%;
+                    bottom: 40px;
+                }
+            }
+            &:nth-child(2) {
+                .item-icon {
+                    background-image: url(../images/siteType/yingxiao/marketing-icon2.png);
+                }
+                .hover-list .hover-item {
+                    @for $i from 1 through 4 {
+                        &:nth-child(#{$i}) .hover-icon { 
+                            background-image: url(../images/siteType/yingxiao/marketing-icon#{$i+7}.png);
+                         }
+                    }
+                }
+            }
+            &:nth-child(3) {
+                .item-icon {
+                    background-image: url(../images/siteType/yingxiao/marketing-icon3.png);
+                }
+                .hover-list .hover-item {
+                    @for $i from 1 through 4 {
+                        &:nth-child(#{$i}) .hover-icon { 
+                            background-image: url(../images/siteType/yingxiao/marketing-icon#{$i+11}.png);
+                         }
+                    }
+                }
+            }
+            &:hover .jc-hover {
+                // display: block;
+                opacity: 1;
+            }
+        }
+    }
+
+    // 晋级功能
+    .btn-group {
+        @include btn-wrap(44px,200px);
+        font-size: 0;
+        margin-bottom: 65px;
+        button {
+            height: 100%;
+            font-size: 16px;
+            color: #999;
+            font-size: 16px;
+            border: 1px solid #999;
+            &.active {
+                color: #fff;
+                background: #3CA7FC;
+                border: 1px solid #3CA7FC;
+            }
+        }
+    }
+    .con-wrap {
+        text-align: center;
+        .content {
+            @include float-box();
+            display: inline-block;
+            .item {
+                text-align: left;
+                line-height: 1.3;
+                height: 131px;
+                padding-top: 30px;
+                padding-left: 160px;
+                background: url(../images/siteType/yingxiao/marketing-jgn-icon1.png) no-repeat left center;
+                &:nth-child(2) {
+                    margin-left: 135px;
+                    background-image: url(../images/siteType/yingxiao/marketing-jgn-icon2.png);
+                }
+                .item-tit {
+                    font-size: 18px;
+                    margin-bottom: 6px;
+                }
+                .item-p {
+                    font-size: 14px;
+                    color: #666;
+                }
+            }
+            &:last-child {
+                width: 100%;
+                .item {
+                    width: 33.3333%;
+                    margin-left: 0px;
+                    @for $i from 1 through 12 {
+                        &:nth-child(#{$i}) { 
+                            background-image: url(../images/siteType/yingxiao/marketing-jgn-icon#{$i+2}.png);
+                         }
+                    }
+                }
+            }
+        }
+    }
+
+    // 覆盖各个行业
+    .category-list {
+        margin-bottom: 60px;
+        @include float-box();
+        .ca-item {
+            width: 285px;
+            height: 106px;
+            line-height: 106px;
+            text-align: center;
+            margin-right: 20px;
+            margin-bottom: 18px;
+            background: pink;
+            color: #fff;
+            font-size: 24px;
+            background: no-repeat center;
+            @for $i from 1 through 12 {
+                &:nth-child(#{$i}) { 
+                    background-image: url(../images/siteType/yingxiao/marketing-fg-#{$i}.png);
+                 }
+            }
+            &:nth-child(4n+4) {
+                margin-right: 0px; 
+            }
+        }
+    }
+
+}
+
+// 响应式网站
+.xiangy-main {
+    .public-title {
+        margin-bottom: 60px;
+    }
+    .con-items {
+        @include float-box();
+        .com-item {
+            text-align: center;
+            width: 33.3333%;
+            margin-bottom: 60px;
+            img {
+                width: 40px;
+            }
+            p {
+                color: #666;
+                margin-top: 15px;
+            }
+            &:nth-child(n+4){
+                margin-bottom: 0;
+            }
+        }
+    }
+    .img-block {
+        text-align: center;
+    }
+    .img-items {
+        position: relative;
+        text-align: center;
+        padding: 100px 0 60px;
+        &::before {
+            content: "";
+            @include position-center(level);
+            top: 0;
+            border: 30px solid;
+            border-color: #F9F9F9 transparent transparent;
+        }
+    }
+    .img-box1 {
+        background-color: #FFD46C;
+    }
+    .img-box2::before {
+        border-color: #FFD46C transparent transparent;
+    }
+}
+
+// 电商型网站
+.dians-main {
+    margin-bottom: 72px;
+    .banner-wrap {
+        width: 100%;
+    }
+    .item {
+        text-align: center;
+        p {
+            line-height: 1.4;
+        }
+    }
+    .block-items {
+        @include float-box();
+    }
+    .block-1 {
+        margin-top: 70px;
+        .item {
+            width: 20%;
+            p {
+                font-size: 18px;
+                margin-top: 26px;
+            }
+        }
+    }
+    .block-2 {
+        margin-top: 60px;
+        .item {
+            width: 260px;
+            height: 338px;
+            border: 1px solid #E5E5E5;
+            background-color: #fff;
+            padding: 0 15px;
+            margin: 0 20px;
+            img {
+                height: 113px;
+                margin: 56px 0 45px;
+            }
+        }
+    }
+    .block-3 {
+        margin-top: 60px;
+        .item {
+            width: 33.3333%;
+            margin-bottom: 40px;
+            img {
+                height: 113px;
+            }
+            p {
+                width: 200px;
+                margin: 20px auto 0;
+            }
+            &:nth-child(n+4){
+                margin-bottom: 0px;
+            }
+        }
+    }
+    .block-4 {
+        margin-top: 60px;
+        @include float-wrap(210px,356px,66px);
+        .item {
+            cursor: pointer;
+            .item-title {
+                position: relative;
+                height: 70px;
+                line-height: 70px;
+                font-size: 18px;
+                color: #666;
+                padding-left: 92px;
+                text-align: left;
+                background-color: #E5E5E5;
+                img {
+                    @include position-center(vertical,50px);
+                    &.cur {
+                        opacity: 0;
+                    }
+                }
+            }
+            .item-con {
+                text-align: left;
+                height: 140px;
+                border: 1px solid #E5E5E5;
+                border-top: none;
+                padding: 30px 40px 0;
+                p {
+                    font-size: 14px;
+                    color: #999;
+                    line-height: 24px;
+                    margin-bottom: 10px;
+                    position: relative;
+                    padding-left: 14px;
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        top: 9px;
+                        width: 5px;
+                        height: 5px;
+                        background-color: #ccc;
+                        border-radius: 50%;
+                    }
+                }
+            }
+            &:hover {
+                box-shadow: 0 0 10px 5px rgba(0,0,0,.08);
+                .item-title {
+                    color: #fff;
+                    background: #3CA7FC;
+                    img.cur {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 外贸型网站
+.waimao-main {
+    text-align: center;
+    .block-1 {
+        text-align: center;
+        .head {
+            margin-bottom: 10px;
+            p {
+                line-height: 24px;
+            }
+        }
+    }
+    .block-2 {
+        .items {
+            @include float-wrap(300px,284px,21px);
+            .item {
+                @extend .transition;
+                cursor: pointer;
+                border: 1px solid #E5E5E5;
+                .bg-box {
+                    @extend .transition;
+                    height: 80px;
+                    margin-top: 70px;
+                    margin-bottom: 20px;
+                    background: no-repeat center;
+                }
+                p {
+                    color: #333;
+                    font-size: 16px;
+                    line-height: 26px;
+                }
+                @for $i from 1 through 4 {
+                    &:nth-child(#{$i}) .bg-box { 
+                        background-image: url(../images/siteType/waimao/items-design-#{$i}.png);
+                     }
+                }
+                &:hover {
+                    border-color: #3CA7FC;
+                    @for $i from 1 through 4 {
+                        &:nth-child(#{$i}) .bg-box { 
+                            background-image: url(../images/siteType/waimao/items-design-#{$i}-hov.png);
+                         }
+                    }
+                }
+            }
+        }
+    }
+    .case-wrap {
+        margin-bottom: 70px;
+    }
+}
+.m-app-list {
+    @include float-box();
+    .m-app-item {
+        width: 25%;
+        text-align: center;
+        .item-p {
+            font-size: 18px;
+            margin-top: 24px;
+        }
+    }
+}
+.app-bottom {
+    margin-top: 50px;
+    @include float-wrap(160px,590px);
+    .item {
+        border: 1px solid #E5E5E5;
+        text-align: center;
+        &>* {
+            display: inline-block;
+        }
+        .item-l {
+            margin-top: 47px;
+            margin-right: 50px;
+            vertical-align: top;
+        }
+        .item-r {
+            margin-top: 37px;
+            .item-r-tit {
+                font-size: 18px;
+                margin-bottom: 20px;
+            }
+            .item-r-p {
+                color: #999;
+                line-height: 24px;
+            }
+        }
+    }
+}

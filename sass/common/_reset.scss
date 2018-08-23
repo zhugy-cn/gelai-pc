@@ -1,0 +1,79 @@
+html, body {
+	height: 100%;
+}
+body, h1, h2, h3, h4, h5, p, ul, ol, dl, dd {
+	margin: 0
+}
+* {
+	box-sizing: border-box;
+}
+
+ul, ol, input, button, textarea, th, td {
+	padding: 0
+}
+li {
+	list-style: none
+}
+h1, h2, h3, h4 {
+	color: inherit;
+	font-size: 100%;
+	font-weight: inherit;
+}
+a {
+	color: inherit;
+	text-decoration: none;
+}
+a:active,
+a:hover {
+    outline: none;
+}
+input, button, textarea {
+	font-weight: inherit;
+	vertical-align: baseline;
+	color: inherit;
+	border: 0;
+	outline: none;
+	font-size: 100%;
+	line-height: inherit;
+}
+textarea {
+	resize: none;
+}
+input[type="button"], button {
+	vertical-align: baseline;
+	background-color: transparent;
+}
+img {
+    border: none;
+	vertical-align: top;
+}
+i {
+	font-style: inherit;
+}
+th {
+	font-weight: inherit;
+}
+// 公共样式
+body {
+    line-height: 1;
+    font-size: 14px;
+    color: #333;
+	background: #fff;
+	min-width: 1200px;
+    font-family: 'Microsoft Yahei', 'PingFangSC', sans-serif;
+}
+.public-center {
+    position: relative;
+	width: 1200px;
+    margin: 0 auto;
+    min-width: 1200px;
+}
+.title-30px {
+	font-size: 30px;
+	text-align: center;
+}
+.transition {
+    -moz-transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+}

@@ -1,0 +1,212 @@
+@import "./common/_base.scss";
+@import "./common/_mixin.scss";
+
+.offer-main {
+
+    // banner start
+    .main-banner {
+        height: 490px;
+        padding-top: 70px;
+        background-color: #2655CD;
+        .img-box {
+            height: 420px;
+        }
+        .banner-text {
+            padding-top:  150px;
+            .text-title {
+                font-size: 48px;
+                color: #fff;
+                font-weight: bold;
+                margin-bottom: 42px;
+            }
+            .text-p {
+                font-size: 30px;
+                color: #fff;
+            }
+        }
+    }
+    // banner end
+
+    // 免费报价 start 
+    .main-body {
+        .body-title {
+            @extend .title-30px;
+            margin: 65px 0 45px;
+        }
+        .form {
+            .form-dl {
+                border: 1px solid #eee;
+                border-bottom: none;
+                .form-dt {
+                    position: relative;
+                    width: 168px;
+                    height: 50px;
+                    line-height: 50px;
+                    text-align: left;
+                    font-size: 18px;
+                    color: #fff;
+                    background-color: #FF9000;
+                    margin: -1px 0 0 -1px;
+                    text-indent: 1em;
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        right: -30px;
+                        top: 0;
+                        width: 0;
+                        height: 0;
+                        border: 30px solid;
+                        border-top-width: 50px;
+                        border-color: #FF9000 transparent transparent transparent;
+                    }
+                    &:nth-of-type(3) {
+                        margin-top: -20px;
+                    }
+                }
+                .form-dd {
+                    padding: 20px 38px 50px;
+                    .type-group {
+                        @include float-wrap(360px,224px,75px);
+                        .type-item {
+                            @extend .transition;
+                            position: relative;
+                            border: 1px solid #eee;
+                            text-align: center;
+                            cursor: pointer;
+                            &.cur {
+                                border-color: #00a2ff;
+                                box-shadow: 0 0 3px 2px rgba(0, 162, 255, 0.2);
+                                .item-title,
+                                .item-more a {
+                                    color: #00a2ff;
+                                }
+                                img.img-cur {
+                                    opacity: 1;
+                                }
+                            }
+                            &:last-child {
+                                margin-right: 0;
+                            }
+                            .img-box {
+                                position: relative;
+                                height: 66px;
+                                margin: 30px auto;
+                                img {
+                                    @include position-center();
+                                }
+                                .img-cur {
+                                    @extend .transition;
+                                    opacity: 0;
+                                }
+                            }
+                            .item-title {
+                                @extend .transition;
+                                font-size: 20px;
+                                margin-bottom: 10px;
+                            }
+                            .item-p {
+                                color: #999;
+                                line-height: 24px;
+                            }
+                        }
+                    }
+                    .fn-group {
+                        @include float-box();
+                        height: auto;
+                        .fn-item {
+                            position: relative;
+                            height: 270px;
+                            width: 200px;
+                            padding: 0 20px;
+                            background-color: #fff;
+                            margin-right: 30px;
+                            box-shadow: 0 0 5px 0 rgba(0, 0, 0, .2);
+                            cursor: pointer;
+                            margin-bottom: 20px;
+                            &:nth-child(5n+5) {
+                                margin-right: 0;
+                            }
+                            &.cur::after {
+                                background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAANCAMAAABBwMRzAAAARVBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////9SnXPCAAAAFnRSTlMAyu4NAcT147GtnIR8bldJQjEkFQa/jC+OXwAAAFxJREFUCNdVjkkOwCAMxIBCd3bq/z+1IKEqnYvjQ5JRMot2Uu2Oln5hitAASWhe8ULrxjn46GWgOVwbg+awHSdbVSPFcCvlWfNcjBAThO/SjTFcotYBu/3V7j9mXkLjA3f6zdWeAAAAAElFTkSuQmCC) no-repeat center #00A0E9;
+                            }
+                            &::after {
+                                content: "";
+                                position: absolute;
+                                right: 20px;
+                                top: 20px;
+                                width: 24px;
+                                height: 24px;
+                                border: 1px solid #00A0E9;
+                                background-color: #eaf6ff;
+                                border-radius: 5px;
+                            }
+                            .item-title {
+                                font-size: 18px;
+                                margin: 23px 0;
+                            }
+                            .item-p {
+                                color: #999;
+                                margin-bottom: 10px;
+                            }
+                        }
+                    }
+                    .inp-group {
+                        width: 400px;
+                        margin: 0 auto;
+                        .inp-item {
+                            font-size: 0;
+                            margin-bottom: 20px;
+                            height: 40px;
+                            line-height: 40px;
+                            label {
+                                display: inline-block;
+                                vertical-align: middle;
+                                width: 60px;
+                                font-size: 16px;
+                            }
+                            input {
+                                font-size: 14px;
+                                width: 340px;
+                                height: 40px;
+                                line-height: 40px;
+                                padding: 0 10px;
+                                border: 1px solid #ccc;
+                                display: inline-block;
+                                vertical-align: middle;
+                                border-radius: 3px;
+                                &:focus {
+                                    border-color: #00A0E9;
+                                    box-shadow: 0 0 2px 0 #00A0E9;
+                                }
+                                &.verify-inp {
+                                    width: 232px;
+                                    margin-right: 10px;
+                                }
+                            }
+                            .verify-link img {
+                                height: 40px;
+                            }
+                            &:last-child {
+                                margin-bottom: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+            .form-bottom {
+                position: relative;
+                height: 195px;
+                background: url(../images/offer/offer-bottom-banner.png) no-repeat center;
+                button {
+                    @include base-btn(200px,50px,20px,#333,#FFEA00);
+                    @include position-center();
+                    border-radius: 5px;
+                    &:hover {
+                        box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.6);
+                    }
+                }
+            }
+        }
+    }
+    // 免费报价 end
+}

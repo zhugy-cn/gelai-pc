@@ -1,0 +1,102 @@
+// 清除浮动
+@mixin clearfix() {  
+    &:before,
+    &:after {  
+        content: "";  
+        display: table;
+    }  
+    &:after {  
+        clear: both;  
+    }  
+}
+// 单行文本溢出控制
+@mixin single-text() {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+// 浮动
+@mixin float-box($height:auto) {
+    @include clearfix();
+    height: $height;
+    &>* {
+        float: left;
+        height: 100%;
+    }
+    
+}
+
+@mixin float-wrap($height:auto,$w:auto,$mar:auto) {
+    @include clearfix();
+    height: $height;
+    &>* {
+        float: left;
+        height: 100%;
+        width: $w;
+        margin-right: $mar;
+        &:last-child {
+            margin-right: 0;
+            float: right;
+        }
+    }
+}
+// 按钮
+@mixin base-btn($w:100%,$h:100%,$font:inherit,$c:inherit,$bgc:#fff,$bor:none){
+    display: block;
+    width: $w;
+    height: $h;
+    line-height: $h;
+    font-size: $font;
+    color: $c;
+    background: $bgc;
+    border: $bor;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+// 居中
+@mixin position-center($type:center,$l:0){
+    position: absolute;
+    @if $type == center {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+    @if $type == level {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    @if $type == vertical {
+        left: $l;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+// 居中按钮
+@mixin btn-wrap($h:auto,$w:auto) {
+    height: $h;
+    line-height: $h;
+    text-align: center;
+    &>* {
+        display: inline-block;
+        width: $w;
+        cursor: pointer;
+    }
+}
+
+// 两边实线
+@mixin line($w:auto,$c:#ccc) {
+    &::before,
+    &::after {
+        content: "";
+        display: inline-block;
+        width: $w;
+        vertical-align: middle;
+        border-bottom: 1px solid $c;
+    }
+    &::before {
+        margin-right: 20px;
+    }
+    &::after {
+        margin-left: 20px;
+    }
+}

@@ -1,0 +1,74 @@
+// 公共样式
+body {
+    line-height: 1;
+    font-size: 14px;
+    color: #333;
+	background: #fff;
+	min-width: 1200px;
+    font-family: 'Microsoft Yahei', 'PingFangSC', sans-serif;
+}
+html {
+    min-width: 1200px;
+}
+.public-center {
+    position: relative;
+	width: 1200px;
+    margin: 0 auto;
+    min-width: 1200px;
+}
+.title-30px {
+	font-size: 30px;
+	text-align: center;
+}
+.transition {
+    -moz-transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+}
+.hide {
+    visibility: hidden;
+}
+.animated {
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+.rollInLeft {
+    animation-name: rollInLeft;
+}
+
+@keyframes rollInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-60%) rotateY(-110deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(-78px) rotateY(0deg);
+    }
+}
+
+.rollInLeft1 {
+    animation-name: rollInLeft1;
+}
+
+@keyframes rollInLeft1 {
+    0% {
+        opacity: 0;
+        transform: translateX(-60%) rotateY(-110deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(-133.5px) rotateY(0deg);
+    }
+}
+a, button, input {
+	@extend .transition;
+}
+// 字体引入
+@font-face {
+    font-family: "pmzdbt";
+    src: url("./pmzdbt.ttf");
+}
+

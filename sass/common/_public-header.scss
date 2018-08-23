@@ -1,0 +1,121 @@
+// 公共头部
+$hd-height: 70px;
+.public-header {
+    position: absolute;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-width: 1200px;
+    height: $hd-height;
+    padding: 0 30px; // overflow: hidden;
+    border-bottom: 1px solid rgba(255, 255, 255, .2);
+    .hd-logo-link {
+        float: left;
+        margin-top: 18px;
+    }
+    .hd-r {
+        float: right;
+        .hd-nav {
+            float: left;
+            margin-right: 15px;
+            .nav-list {
+                @include clearfix();
+                .nav-item {
+                    float: left; // &:nth-child(2) {
+                    position: relative;
+                    &:hover .subitems {
+                        opacity: 1;
+                        visibility: visible;
+                        transform: none;
+                    }
+                    .subitems {
+                        position: absolute;
+                        left: 0;
+                        top: 70px;
+                        width: 100%;
+                        z-index: -1;
+                        text-align: center;
+                        opacity: 0;
+                        visibility: hidden;
+                        transition: all .3s ease;
+                        background-color: rgba(0, 32, 75, .6);
+                        padding: 10px 0;
+                        transform: translateY(-4%);
+                        .subitem-link {
+                            color: #fff;
+                            display: block;
+                            height: 36px;
+                            line-height: 36px;
+                            &:hover {
+                                color: #00A2FF;
+                            }
+                        }
+                    } // }
+                    &.cur .nav-link {
+                        border-color: #fff;
+                    }
+                    .nav-link {
+                        transition: all .3s;
+                        display: block;
+                        line-height: $hd-height - 2;
+                        color: #fff;
+                        font-size: 16px;
+                        padding: 0 25px;
+                        border-bottom: 2px solid transparent;
+                    }
+                }
+            }
+        }
+        .hd-tel {
+            float: right;
+            height: $hd-height;
+            color: #fff;
+            padding-left: 42px;
+            background: url(../images/public/tel.png) no-repeat left center;
+            &>* {
+                float: left;
+            }
+            .tel-title {
+                height: $hd-height;
+                line-height: $hd-height;
+                font-size: 16px;
+                margin-right: 10px;
+            }
+            .tel-num {
+                margin-top: 13px;
+                * {
+                    font-size: 20px;
+                    font-family: "pmzdbt";
+                    line-height: 1.1;
+                }
+            }
+        }
+    }
+}
+
+// banner 公共
+.public-banner,
+.main-banner {
+    position: relative;
+    overflow: hidden;
+    .img-box {
+        @include position-center(level);
+        height: 100%;
+        img {
+            height: 100%;
+        }
+    }
+    .banner-contetn {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        text-align: center;
+        .banner-wrap {
+            color: #fff;
+            @include position-center();
+        }
+    }
+}

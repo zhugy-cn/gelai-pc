@@ -1,0 +1,175 @@
+@import "./common/_base.scss";
+@import "./common/_mixin.scss";
+
+
+.about-main {
+
+    // banner start
+    .main-banner {
+        height: 520px;
+    }
+    // banner end
+
+    // 公司简介 stsrt
+    .main-desc {
+        box-shadow: 0 3px 2px 1px #E6E6E6;
+        .desc-wrap {
+            background: url(../images/about/bg_CE.png) no-repeat right -80px;
+            padding-bottom: 60px;
+        }
+        .desc-title {
+            @extend .title-30px;
+            line-height: 134px;
+            padding-bottom: 5px;
+            background: url(../images/about/all.png) no-repeat 0 128px;
+        }
+        .desc-content {
+            @include float-box();
+            padding-top: 70px;
+            .con-text {
+                float: right;
+                width: 58.6%;
+                .text-p {
+                    font-size: 14px;
+                    line-height: 30px;
+                    text-indent: 2em;
+                }
+            }
+        }
+    }
+
+    // 公司简介 end
+    // 所获荣耀 start
+    .main-glory {
+        .glory-wrap {
+            .glory-title {
+                @extend .title-30px;
+                line-height: 134px;
+            }
+            .glory-content {
+                position: relative;
+                height: 1700px;
+                background: url(../images/about/bg.png) no-repeat center;
+                .year-box {
+                    width: 100%;
+                    height: 100%;
+                }
+                .year-item {
+                    position: absolute;
+                    display: inline;
+                    font-size: 18px;
+                    color: #4f88ae;
+                    font-weight: bold;
+                    &:nth-child(1) {
+                        left: 390px;
+                        top: 0px;
+                    }
+                    &:nth-child(2) {
+                        left: 580px;
+                        top: 310px;
+                    }
+                    &:nth-child(3) {
+                        left: 915px;
+                        top: 670px;
+                    }
+                    &:nth-child(4) {
+                        left: 662px;
+                        top: 940px;
+                    }
+                    &:nth-child(5) {
+                        left: 487px;
+                        top: 1040px;
+                    }
+                    &:nth-child(6) {
+                        left: 676px;
+                        top: 1150px;
+                    }
+                    &:nth-child(7) {
+                        left: 490px;
+                        top: 1252px;
+                    }
+                    &:nth-child(8) {
+                        left: 676px;
+                        top: 1410px;
+                    }
+                }
+                .desc-item {
+                    position: absolute;
+                    color: #4f88ae;
+                    line-height: 24px;
+                    &:nth-child(1){
+                        left: 474px;
+                        top: 22px;
+                    }
+                    &:nth-child(2){
+                        left: 680px;
+                        top: 133px;
+                    }
+                    &:nth-child(3){
+                        left: 695px;
+                        top: 308px;
+                    }
+                    &:nth-child(4){
+                        left: 222px;
+                        top: 330px;
+                    }
+                    
+                    &:nth-child(5){
+                        left: 336px;
+                        top: 450px;
+                    }
+                    &:nth-child(6){
+                        left: 16px;
+                        top: 618px;
+                    }
+                    &:nth-child(7){
+                        left: 518px;
+                        top: 618px;
+                    }
+                    &:nth-child(8){
+                        left: 777px;
+                        top: 572px;
+                    }
+                    &:nth-child(9){
+                        left: 598px;
+                        top: 730px;
+                    }
+                    &:nth-child(10){
+                        left: 245px;
+                        top: 787px;
+                    }
+                    &:nth-child(11){
+                        left: 626px;
+                        top: 784px;
+                    }
+                    &:nth-child(12){
+                        left: 270px;
+                        top: 904px;
+                    }
+                    &:nth-child(13){
+                        left: 662px;
+                        top: 969px;
+                    }
+                    &:nth-child(14){
+                        left: 130px;
+                        top: 1068px;
+                    }
+                    &:nth-child(15){
+                        left: 677px;
+                        top: 1180px;
+                    }
+                    &:nth-child(16){
+                        left: 209px;
+                        top: 1279px;
+                    }
+                    &:nth-child(17){
+                        left: 676px;
+                        top: 1440px;
+                    }
+                    
+                }
+            }
+        }
+    }
+    // 所获荣耀 end
+}

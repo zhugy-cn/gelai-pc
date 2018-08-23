@@ -1,0 +1,35 @@
+.public-list {
+    @include float-box();
+    .public-item {
+        @extend .transition;
+        position: relative;
+        overflow: hidden;
+        margin-right: 30px;
+        margin-bottom: 30px;
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 6px 2px rgba(0, 0, 0, 0.6);
+            .item-desc{
+                transform: translateY(0);
+            }
+        }
+        &:nth-of-type(4n+4){
+            float: right;
+            margin-right: 0;
+        }
+        .item-desc {
+            @extend .transition;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 52px;
+            line-height: 52px;
+            font-size: 14px;
+            color: #666;
+            background-color: #fff;
+            padding-left: 20px;
+            transform: translateY(100%);
+        }
+    }
+}
